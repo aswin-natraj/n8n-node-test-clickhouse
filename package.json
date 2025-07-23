@@ -1,26 +1,26 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-test-clickhouse",
   "version": "0.1.0",
-  "description": "",
+  "description": "Custom n8n node for ClickHouse integration",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "clickhouse",
+    "n8n"
   ],
   "license": "MIT",
-  "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Aswin Nataraj",
+    "email": "duraisathishraj@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/aswin-natraj/n8n-node-test-clickhouse.git"
   },
   "engines": {
     "node": ">=20.15"
   },
-  "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "build": "rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
@@ -33,12 +33,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/ClickHouseApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/ClickHouse/ClickHouse.node.js"
     ]
   },
   "devDependencies": {
@@ -47,9 +45,14 @@
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
     "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "n8n-workflow": "*"
+    "n8n-workflow": "^1.82.0"
+  },
+  "dependencies": {
+    "clickhouse": "^2.6.0",
+    "n8n-core": "^1.14.1"
   }
 }
