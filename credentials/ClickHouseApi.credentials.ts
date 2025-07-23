@@ -1,28 +1,29 @@
 import {
 	ICredentialType,
-	NodePropertyTypes,
+    INodeProperties,
 } from 'n8n-workflow';
 
 export class ClickHouseApi implements ICredentialType {
 	name = 'clickHouseApi';
 	displayName = 'ClickHouse API';
-	properties = [
+	documentationUrl = 'https://clickhouse.com/docs/en/interfaces/http/';
+	properties: INodeProperties[] = [
 		{
 			displayName: 'Host',
 			name: 'host',
-			type: 'string' as NodePropertyTypes,
+			type: 'string',
 			default: 'http://localhost:8123',
 		},
 		{
 			displayName: 'Username',
 			name: 'username',
-			type: 'string' as NodePropertyTypes,
+			type: 'string',
 			default: '',
 		},
 		{
 			displayName: 'Password',
 			name: 'password',
-			type: 'string' as NodePropertyTypes,
+			type: 'string',
 			default: '',
 			typeOptions: {
 				password: true,
@@ -31,7 +32,7 @@ export class ClickHouseApi implements ICredentialType {
 		{
 			displayName: 'Database',
 			name: 'database',
-			type: 'string' as NodePropertyTypes,
+			type: 'string',
 			default: 'default',
 		},
 	];

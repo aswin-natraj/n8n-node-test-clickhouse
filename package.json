@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "clickhouse": "^2.6.0",
-    "n8n-core": "^1.14.1"
+    "n8n-core": "^1.14.1",
+    "n8n-nodes-test-clickhouse": "file:n8n-nodes-test-clickhouse-0.1.0.tgz"
   }
 }
